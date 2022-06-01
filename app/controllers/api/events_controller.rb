@@ -35,7 +35,7 @@ class Api::EventsController < ApplicationController
   private
 
   def set_event
-    @event = Event.fined(params[:id])
+    @event = Event.find(params[:id])
   end
 
   def event_params
