@@ -31,19 +31,19 @@ const Event = ({ events, onDelete }) => {
         </li>
         <li>
           <strong>Title:</strong>
-          {event.event_title}
+          {event.title}
         </li>
         <li>
           <strong>Speaker:</strong>
-          {event.event_speaker}
+          {event.speaker}
         </li>
         <li>
           <strong>Host:</strong>
-          {event.event_host}
+          {event.host}
         </li>
         <li>
           <strong>Published:</strong>
-          {event.event_published ? 'yes' : 'no' }
+          {event.published ? 'yes' : 'no' }
         </li>
       </ul>
     </div>
