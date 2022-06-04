@@ -95,11 +95,13 @@ const EventForm = ({ events, onSave }) => {
     }
   };
 
+  const title = event.id ? `${event.event_date} - ${event.event_type}` : 'NewEvent';
+
   return (
     <section>
       {renderErrors()}
 
-      <h2>New Event</h2>
+      <h2>{title}</h2>
       <form className="eventForm" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="event_type">
