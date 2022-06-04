@@ -6,7 +6,7 @@ import React, {
 } from 'react';
 import Pikaday from 'pikaday';
 import PropTypes from 'prop-types';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { isEmptyObject, validateEvent, formatDate } from '../helpers/helpers';
 import 'pikaday/css/pikaday.css';
 
@@ -95,6 +95,7 @@ const EventForm = ({ events, onSave }) => {
     }
   };
 
+  const cancelURL = event.id ? `/events/${event.id}` : '/events';
   const title = event.id ? `${event.event_date} - ${event.event_type}` : 'NewEvent';
 
   return (
@@ -180,6 +181,7 @@ const EventForm = ({ events, onSave }) => {
         </div>
         <div className="form-actions">
           <button type="submit">Save</button>
+          <Link to={cancelURL}>Cancel</Link>
         </div>
       </form>
     </section>
