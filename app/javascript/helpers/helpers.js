@@ -2,7 +2,7 @@ import { error } from './notifications';
 
 export const isEmptyObject = (obj) => Object.keys(obj).length === 0;
 
-const isValidDate = dateObj => !Number.isNan(Date.parse(dateObj));
+const isValidDate = (dateObj) => !Number.isNan(Date.parse(dateObj));
 
 export const validateEvent = (event) => {
   const errors = {};
