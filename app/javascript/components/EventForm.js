@@ -8,6 +8,7 @@ import Pikaday from 'pikaday';
 import PropTypes from 'prop-types';
 import { useParams, Link } from 'react-router-dom';
 import { isEmptyObject, validateEvent, formatDate } from '../helpers/helpers';
+import EventNotFound from './EventNotFound';
 import 'pikaday/css/pikaday.css';
 
 const EventForm = ({ events, onSave }) => {
@@ -94,6 +95,8 @@ const EventForm = ({ events, onSave }) => {
       onSave(event);
     }
   };
+
+  if (id && !event.id) return <EventNotFound />;
 
   const cancelURL = event.id ? `/events/${event.id}` : '/events';
   const title = event.id ? `${event.event_date} - ${event.event_type}` : 'NewEvent';
